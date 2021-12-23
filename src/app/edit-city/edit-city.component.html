@@ -1,0 +1,15 @@
+
+{{city.city}}
+<br>
+{{city.state}}
+<br>
+New Monthly Rent: <input [(ngModel)] = "city.monthlyRent"  type="text">
+<br>
+New Average Salary: <input [(ngModel)] = "city.averageSal"  type="text">
+<br>
+New Updated Year: <input [(ngModel)] = "city.updatedYear">
+<br>
+<br>
+<button (click)="updateCity()">Update</button>
+<br>
+<button (click)="deleteCity()">Delete</button>
