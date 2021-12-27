@@ -12,3 +12,16 @@ Last Updated: {{city.updatedYear}}
 <br>
 <button (click)="goToEdit()">Edit or Delete</button>
 <button (click) = "goBack()">Go back to Cities</button>
+<br>
+<br>
+<br>
+<div *ngFor = "let key of tempCityList, let i=index">
+    <div (click) = "makeEditable(i)" *ngIf="key[2] === false">
+        {{key[0]}} : {{key[1]}}
+    </div>
+    <div *ngIf="key[2] === true">
+        {{key[0]}} : <input (blur) = "makeEditable(i)" [(ngModel)]="key[1]"/>
+    </div>
+</div>
+<br>
+<button (click) = "updateCity()">Update City</button>

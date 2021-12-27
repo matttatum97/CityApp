@@ -13,6 +13,8 @@ export class CityComponent implements OnInit {
 
   city:City = {}
 
+  tempCityList:any[][] = [];
+
   constructor(
     private route:ActivatedRoute,
     private cityService: CityService,
@@ -26,6 +28,11 @@ export class CityComponent implements OnInit {
       this.cityService.getCity(myid).subscribe(payload => {
         this.city = payload;
         console.log(this.city)
+        for(const [key, value] of Object.entries(this.city)) {
+          const localArray = [key, value, false];
+          this.tempCityList.push(localArray)
+        }
+
       })
     })
   }
@@ -36,6 +43,14 @@ export class CityComponent implements OnInit {
 
   goBack() {
     this.router.navigateByUrl("");
+  }
+
+  makeEditable(i: number) {
+    this.tempCityList[i][2] = !this.tempCityList[i][2]
+  }
+
+  updateCity() {
+    
   }
 
 }
