@@ -49,8 +49,29 @@ export class CityComponent implements OnInit {
     this.tempCityList[i][2] = !this.tempCityList[i][2]
   }
 
-  updateCity() {
-    
+  updateCity(): void{
+    this.recostitutedCity()
+    this.cityService.updateCity(this.city).subscribe(data => {
+      if(data) {
+        this.router.navigateByUrl("")
+      }
+    })
+      
+  }
+
+  recostitutedCity(): void {
+    const recostitutedCity: any = {};
+    this.tempCityList.forEach(item => {
+      recostitutedCity[item[0]] = item[1]
+    })
+    this.city = recostitutedCity;
+  }
+
+  deleteCity() {
+    console.log(typeof this.city.id)
+    this.cityService.deleteCity(this.city).subscribe(p => {
+      this.router.navigateByUrl("")
+    })
   }
 
 }

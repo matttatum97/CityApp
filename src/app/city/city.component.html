@@ -1,20 +1,4 @@
 
-City Name: {{city.city}}
-<br>
-City State: {{city.state}}
-<br>
-City Montly Rent: {{city.monthlyRent}}
-<br>
-City Average Salary: {{city.averageSal}}
-<br>
-Last Updated: {{city.updatedYear}}
-<br>
-<br>
-<button (click)="goToEdit()">Edit or Delete</button>
-<button (click) = "goBack()">Go back to Cities</button>
-<br>
-<br>
-<br>
 <div *ngFor = "let key of tempCityList, let i=index">
     <div (click) = "makeEditable(i)" *ngIf="key[2] === false">
         {{key[0]}} : {{key[1]}}
@@ -24,4 +8,6 @@ Last Updated: {{city.updatedYear}}
     </div>
 </div>
 <br>
-<button (click) = "updateCity()">Update City</button>
+<button (click) = "updateCity()">Update City in Place</button>
+<br>
+<button (click) = "deleteCity()">Delete</button>
