@@ -1,3 +1,5 @@
+<h1>City Information</h1>
+
 
 <div *ngFor = "let key of tempCityList, let i=index">
     <div (click) = "makeEditable(i)" *ngIf="key[2] === false">
@@ -7,9 +9,12 @@
         {{key[0]}} : <input (blur) = "makeEditable(i)" [(ngModel)]="key[1]"/>
     </div>
 </div>
+<div>
 <br>
-<button (click) = "updateCity()">Update City in Place</button>
 <br>
-<button (click) = "deleteCity()">Delete</button>
-<br>
-<button (click) = "goBack()">Go back to Cities</button>
+    <button (click) = "updateCity()">Update City in Place</button>
+    <br>
+    <button (click) = "deleteCity()">Delete</button>
+    <br>
+    <button (click) = "goBack()">Go back to Cities</button>
+</div>

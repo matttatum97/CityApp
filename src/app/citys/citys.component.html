@@ -1,3 +1,5 @@
+<h1>List Of Cities</h1>
+
 
 <div *ngFor="let city of citys">
     <!-- this puts a id in route parameter see city.component.ts to see it used-->
@@ -8,21 +10,28 @@
     <button (click) = "showAddCity()">Add Cities</button>
 </div>
 
-<div *ngIf = "addCity === true">
-    <br>
-    <br>
-    New City Name: <input [(ngModel)] = "newCity.city" type="text">
-    <br>
-    New City State: <input [(ngModel)] = "newCity.state" type="text">
-    <br>
-    New City Montly Rent: <input [(ngModel)] = "newCity.monthlyRent" type="text">
-    <br>
-    New City Average Salary: <input [(ngModel)] = "newCity.averageSal" type="text">
-    <br>
-    New City Update Year: <input [(ngModel)] = "newCity.updatedYear" type="text">
-    <br>
+<div *ngIf = "addCity === true" class="down">
+    
+    
+        New City Name: <input [(ngModel)] = "newCity.city" type="text">
+    
+    
+    
+        New City State: <input [(ngModel)] = "newCity.state" type="text">
+    
+    
+    
+        New City Montly Rent: <input [(ngModel)] = "newCity.monthlyRent" type="text">
+    
+    
+        New City Average Salary: <input [(ngModel)] = "newCity.averageSal" type="text">
+    
+
+    
+        New City Update Year: <input [(ngModel)] = "newCity.updatedYear" type="text">
+    
     <button (click) = "addNewCity()" >Add New City</button>
-    <br>
+    
     <button (click) = "showAddCity()">Cancel</button>
 </div>
 
