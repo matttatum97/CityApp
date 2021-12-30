@@ -1,11 +1,16 @@
 <h1>List Of Cities</h1>
 
-
-<div *ngFor="let city of citys">
+<div class="container">
+    <div *ngFor="let city of citys">
     <!-- this puts a id in route parameter see city.component.ts to see it used-->
     <a [routerLink]="['/citys', city.id]">{{city.city}}</a>
+    </div>
 </div>
+
+
+
 <br>
+
 <div *ngIf = "addCity === false">
     <button (click) = "showAddCity()">Add Cities</button>
 </div>
@@ -34,4 +39,3 @@
     
     <button (click) = "showAddCity()">Cancel</button>
 </div>
-
